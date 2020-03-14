@@ -1,0 +1,56 @@
+body {
+  background-color: black;
+  font-family: 'Century Gothic';
+}
+
+/* Navbar */
+h1, a {
+  color: #BEBEBE;
+}
+
+h1 {
+  padding-left: 12px;
+}
+
+a {
+  height: 100%;
+  padding: 20px 12px;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #BEBEBE;
+  border-radius: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+
+/* Register card */
+.register {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  margin: 0 30%;
+  padding: 26px;
+}
+
+.register form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#submit {
+  margin-top: 32px;
+  margin-left: auto;
+}
