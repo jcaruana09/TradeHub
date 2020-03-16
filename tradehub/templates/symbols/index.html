@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Symbols{% endblock %}</h1>
+  {% if g.user %}
+    <a href="{{ url_for('tracker.create') }}"></a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="stocks-container">
+    <input type="search" placeholder="Search ..." name="search-value">
+    <p id="result"></p>
+  </div>
+{% endblock %}

@@ -35,7 +35,7 @@ a:hover {
 
 
 /* Register card */
-.register {
+.auth-card {
   border: 1px solid white;
   display: flex;
   flex-direction: column;
@@ -43,7 +43,7 @@ a:hover {
   padding: 26px;
 }
 
-.register form {
+.auth-card form {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -54,3 +54,49 @@ a:hover {
   margin-top: 32px;
   margin-left: auto;
 }
+
+
+/* Symbol Index */
+.stocks-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 10%;
+}
+
+.stocks-container input {
+  background-color: black;
+  border: none;
+  color: #BEBEBE;
+  flex-basis: 100%;
+  flex-grow: 3;
+  margin-bottom: 20px;
+  padding: 20px;
+  font-size: 32px;
+}
+
+.stocks-container input::placeholder {
+  color: #BEBEBE;
+  font-family: 'Century Gothic';
+}
+
+.stocks-container h5 {
+  color: #BEBEBE;
+}
+
+.stock-card {
+  align-items: center;
+  border: 1px solid #BEBEBE;
+  display: flex;
+  flex-basis: 30%;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 12px;
+}
+
+
+#result {
+  color: white;
+}
+

@@ -13,11 +13,13 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
+        # Form input elements for username and password
         username = request.form['username']
         password = request.form['password']
+        # Database needed for checking if user exists
         db = get_database()
         error = None
-
+        # Error handling
         if not username:
             error = 'Username is required'
         elif not password:
@@ -43,8 +45,10 @@ def register():
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
+        # Form input elements for username and password
         username = request.form['username']
         password = request.form['password']
+        # Database needed for checking credentials
         db = get_database()
         error = None
         user = db.execute(
@@ -59,7 +63,7 @@ def login():
         if error is None:
             session.clear()
             session['user_id'] = user['id']
-            return redirect(url_for('index'))
+            return redirect(url_for('symbols.index'))
 
         flash(error)
 
@@ -85,11 +89,13 @@ def logout():
 
 
 def login_required(view):
+    """Function to ensure user login for certain pages"""
     @functools.wraps(view)
     def wrapped_view(**kwargs):
+        # If not logged in redirect to login page
         if g.user is None:
             return redirect(url_for('auth.login'))
-
+        # Otherwise enter desired page
         return view(**kwargs)
 
     return wrapped_view

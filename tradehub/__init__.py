@@ -1,6 +1,8 @@
 import os
 
-from flask import Flask
+from flask import Flask, request, jsonify, render_template
+
+from .symbols import filter_symbols
 
 
 def create_app(test_config=None):
@@ -23,6 +25,19 @@ def create_app(test_config=None):
         os.mkdir(app.instance_path)
     except OSError:
         pass
+
+    @app.route('/filter_data')
+    def filter_data():
+        filter_ = request.args.get('filterVal')
+        filtered_symbols = filter_symbols(filter_)
+        print(filter_)
+        return jsonify(result='PASS')
+
+    # Register Blueprints
+    from . import symbols
+    app.register_blueprint(symbols.bp)
+    # Associates '/' with the index page
+    app.add_url_rule('/', endpoint='index')
 
     from . import home
     app.register_blueprint(home.bp)
