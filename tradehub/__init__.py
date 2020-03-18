@@ -28,10 +28,9 @@ def create_app(test_config=None):
 
     @app.route('/filter_data')
     def filter_data():
-        filter_ = request.args.get('filterVal')
+        filter_ = request.args.get('filtervalue')
         filtered_symbols = filter_symbols(filter_)
-        print(filter_)
-        return jsonify(result='PASS')
+        return jsonify(result=filtered_symbols)
 
     # Register Blueprints
     from . import symbols

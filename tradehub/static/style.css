@@ -64,7 +64,7 @@ a:hover {
   margin: 0 10%;
 }
 
-.stocks-container input {
+input[name='filtervalue'] {
   background-color: black;
   border: none;
   color: #BEBEBE;
@@ -75,9 +75,18 @@ a:hover {
   font-size: 32px;
 }
 
-.stocks-container input::placeholder {
+input[name='filtervalue']::placeholder {
   color: #BEBEBE;
   font-family: 'Century Gothic';
+}
+
+#search {
+  background: black;
+  border: 1px solid #BEBEBE;
+  border-radius: 25px;
+  color: #BEBEBE;
+  padding: 20px;
+
 }
 
 .stocks-container h5 {

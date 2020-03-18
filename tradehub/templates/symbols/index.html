@@ -8,8 +8,11 @@
 {% endblock %}
 
 {% block content %}
+  <div class="filters">
+    <input type="search" placeholder="Name or Symbol ..." name="filtervalue">
+    <button id="search">Search</button>
+  </div>
   <div class="stocks-container">
-    <input type="search" placeholder="Search ..." name="search-value">
-    <p id="result"></p>
+
   </div>
 {% endblock %}
